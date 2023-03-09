@@ -19,4 +19,5 @@ resource "azurerm_public_ip" "ip" {
   ddos_protection_plan_id = var.ip_ddos_protection_plan_id
 
   tags = local.ip_tags
+  lifecycle { create_before_destroy = true }
 }
